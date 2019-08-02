@@ -26,5 +26,5 @@ We will start by learning some of the fundamentals of Go and Docker before using
 - Deploying new versions with rolling updates
 - Using a Horizontal Pod Autoscaler
 - Using a Pod Disruption Budget
-- Configuring pod anti-ffinity
+- Configuring pod anti-affinity
 - Review
