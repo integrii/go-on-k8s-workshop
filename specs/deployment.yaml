@@ -5,7 +5,6 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  annotations:
   name: CHANGEME
   namespace: default
 spec:
