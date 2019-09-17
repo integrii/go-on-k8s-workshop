@@ -1,11 +1,10 @@
-# This service will be available as getting-started.default (name . namespace)
 apiVersion: v1
 kind: Service
 metadata:
   labels:
   annotations:
     service.beta.kubernetes.io/aws-load-balancer-internal: "0.0.0.0/0" # use an internal load balancer, or remove for an external one
-  name: getting-started
+  name: CHANGEME
   namespace: default
 spec:
   type: LoadBalancer # LoadBalancer indicates we want this service to have an external ELB.  By default, services are available only within the cluster
@@ -13,4 +12,4 @@ spec:
   - port: 80 # listen publicly on 80
     targetPort: 80 # forward requests to healthy pods matching the below selector on this port
   selector:
-    app: getting-started
+    app: CHANGEME
