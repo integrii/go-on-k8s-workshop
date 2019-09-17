@@ -1,0 +1,18 @@
+# The HorizontalPodAutoscaler (hpa) is responsible for adjusting the number of replicas in a deployment as load changes
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: getting-started
+  namespace: default
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1beta1
+    kind: Deployment
+    name: getting-started
+  minReplicas: 2 # at least two replicas for redundancy (think of the PDB above here)
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      targetAverageUtilization: 90 # we want all our pods to operate with 50% of their requested millicores
